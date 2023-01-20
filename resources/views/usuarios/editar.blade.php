@@ -23,8 +23,20 @@
                                 <div class="row">
                                     <div clas="col-xs-12 col-sm-12 col-md-12">
                                         <div class="form-group">
+                                            <label for="cedula">Cédula: </label>
+                                            {!! Form::text('cedula',null,array('class'=>'form-control')) !!}
+                                        </div>
+                                    </div>
+                                    <div clas="col-xs-12 col-sm-12 col-md-12">
+                                        <div class="form-group">
                                             <label for="name">Nombre</label>
                                             {!! Form::text('name',null,array('class'=>'form-control')) !!}
+                                        </div>
+                                    </div>
+                                    <div clas="col-xs-12 col-sm-12 col-md-12">
+                                        <div class="form-group">
+                                            <label for="telefono">Teléfono: </label>
+                                            {!! Form::text('telefono',null,array('class'=>'form-control')) !!}
                                         </div>
                                     </div>
                                     <div clas="col-xs-12 col-sm-12 col-md-12">

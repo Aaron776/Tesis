@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Notifications\UserResetPassword;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -23,13 +24,18 @@ class User extends Authenticatable
     use TwoFactorAuthenticatable;
     use HasRoles;
 
+
+
     /**
      * The attributes that are mass assignable.
      *
      * @var string[]
      */
     protected $fillable = [
+        'cedula',
         'name',
+        'apellido',
+        'telefono',
         'email',
         'password',
     ];
@@ -75,6 +81,15 @@ class User extends Authenticatable
             }
 
         );
+    }
+
+    public function distributivos(){
+        return $this->hasMany(Distributivo::class,'id');
+    }
+
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new UserResetPassword($token));
     }
     
     

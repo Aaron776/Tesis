@@ -253,7 +253,7 @@ return [
     */
 
     'use_route_url' => false,
-    'dashboard_url' => 'home',
+    'dashboard_url' => '#',
     'logout_url' => 'logout',
     'login_url' => 'login',
     'register_url' => 'register',
@@ -309,29 +309,38 @@ return [
         [
             'text' => 'Usuarios',
             'url'  => 'usuarios',
-            'can'  => 'manage-blog',
+            'can'  => 'ver-usuario',
             'icon' => 'fas fa-fw fa-users',
         ],
         [
             'text' => 'Roles',
             'url'  => 'roles',
             'can'  => 'ver-rol',
+            'icon' => 'fas fa-users-cog fa-fw'
+        ],
+        [
+            'text'    => 'Docentes Invitados',
+            'icon'    => 'fab fa-fw fa-buffer',
+            'can'  => 'ver-docentes',
+            'submenu' => [
+                [
+                    'text' => 'Clases Presenciales',
+                    'url'  => 'presenciales',
+                ],
+                [
+                    'text' => 'Clases Virtuales',
+                    'url'  => 'virtuales',
+                ],
+            ],
+        ],
+        [
+            'text' => 'Biométrico',
+            'url'  => 'biometrico',
         ],
         /*[
             'text' => 'Blogs',
             'url'  => 'blogs',
             'can'  => 'ver-blog',
-        ],
-        /*['header' => 'Configuraciones de Cuenta'],
-        [
-            'text' => 'Perfil',
-            'url'  => '#',
-            'icon' => 'fas fa-fw fa-user',
-        ],
-        [
-            'text' => 'Cambiar Contraseña',
-            'url'  => '#',
-            'icon' => 'fas fa-fw fa-lock',
         ],*/
     ],
 

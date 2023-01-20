@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use PDF;
+
 
 //Spatie
 use Spatie\Permission\Models\Role;
@@ -105,7 +105,7 @@ class RolController extends Controller
     
         $role->syncPermissions($request->input('permission'));
     
-        return redirect()->route('roles.index');  
+        return redirect()->route('roles.index')->with('success','¡Rol actualizado con exito!');  
     }
 
     /**

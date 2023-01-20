@@ -13,11 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('periodo', function (Blueprint $table) {
+        Schema::create('materias', function (Blueprint $table) {
             $table->engine='InnoDB';
             $table->id();
-            $table->string('descripcion',30);
-            $table->timestamps();
+            $table->bigInteger('id_escuela')->unsigned();
+            $table->string('nombre');
+            $table->integer('horas_semana');
+
+            $table->foreign('id_escuela')->references('id')->on('escuelas')->onDelete('cascade');
         });
     }
 
@@ -28,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('periodo');
+        Schema::dropIfExists('materias');
     }
 };

@@ -13,14 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('materia', function (Blueprint $table) {
+        Schema::create('biometricos', function (Blueprint $table) {
             $table->engine='InnoDB'; 
             $table->id();
-            $table->bigInteger('escuela_id')->unsigned();
-            $table->string('nombre');
+            $table->bigInteger('id_distributivo')->unsigned();
+            $table->time('hora_entrada');
+            $table->time('hora_salida');
+            $table->enum('estado',['Atrasado','No dio clases','Esta todo bien']);
             $table->timestamps();
 
-            $table->foreign('escuela_id')->references('id')->on('escuela')->onDelete('cascade');
+            $table->foreign('id_distributivo')->references('id')->on('distributivos')->onDelete('cascade');
         });
     }
 
@@ -31,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('materia');
+        Schema::dropIfExists('biometricos');
     }
 };

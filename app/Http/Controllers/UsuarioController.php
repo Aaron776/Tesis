@@ -8,7 +8,7 @@ use Spatie\Permission\Models\Role;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Arr;
-use PDF;
+
 
 class UsuarioController extends Controller
 {
@@ -53,7 +53,9 @@ class UsuarioController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
+            'cedula' => 'required|max:10|min:10|unique:users,cedula',
             'name' => 'required',
+            'telefono' => 'required|max:10|min:10',
             'email' => 'required|email|unique:users,email',
             'password' => 'required|same:confirm-password',
             'roles' => 'required'
@@ -104,7 +106,9 @@ class UsuarioController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
+            'cedula' => 'required|max:10|min:10',
             'name' => 'required',
+            'telefono' => 'required|max:10|min:10',
             'email' => 'required|email|unique:users,email,'.$id,
             'password' => 'same:confirm-password',
             'roles' => 'required'
@@ -123,7 +127,7 @@ class UsuarioController extends Controller
     
         $user->assignRole($request->input('roles'));
     
-        return redirect()->route('usuarios.index');
+        return redirect()->route('usuarios.index')->with('success','¡Usuario actualizado con exito!');;
     }
 
     /**
