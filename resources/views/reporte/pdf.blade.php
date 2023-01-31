@@ -12,12 +12,17 @@
     integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 </head>
 <body>
-  <img src="">
-  <h2 style="text-align: center;">Reporte del Docente: {{$datos->distributivos->usuarios->name}}</h2>
+  <h1 style="text-align: center;">UNIVERSIDAD IBEROAMERICANA DEL ECUADOR</h1>
+  <div>
+    <img style="margin-left: 450px;" src="https://univercimas.com/wp-content/uploads/2021/05/Logo-de-la-Universidad-Iberoamericana-del-Ecuador-UNIBE-300x300.png" width="150px">
+  </div>
+  
+  <h2 style="text-align: center;">Reporte</h2>
   <table class="table table-hover mt-4" style="border: 1px solid black;">
         <thead>
           <tr style="border: 1px solid black;">
             <th style="border: 1px solid black; text-align: center;">Cédula</th>
+            <th style="border: 1px solid black; text-align: center;">Nombre Completo</th>
             <th style="border: 1px solid black; text-align: center;">Asignatura</th>
             <th style="border: 1px solid black; text-align: center;">Día</th>
             <th style="border: 1px solid black; text-align: center;">Modalidad</th>
@@ -25,22 +30,23 @@
             <th style="border: 1px solid black; text-align: center;">Hora Salida</th>
             <th style="border: 1px solid black; text-align: center;">Hora Inicio Clase</th>
             <th style="border: 1px solid black;text-align: center;">Hora Fin Clase</th>
-            <th style="border: 1px solid black; text-align: center;">Estado</th>
+            <th style="border: 1px solid black; text-align: center;">Situación</th>
     
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th style="border: 1px solid black; padding:7px;text-align: center;">{{$datos->distributivos->usuarios->cedula}}</th>
-            <th style="border: 1px solid black; text-align: center; padding:7px;">{{$datos->distributivos->materia}}</th>
-            <th style="border: 1px solid black; text-align: center;padding:7px;">{{$datos->distributivos->dia}}</th>
-            <th style="border: 1px solid black; text-align: center;padding:7px;">{{$datos->distributivos->tipo_clase}}</th>
-            <th style="border: 1px solid black; text-align: center;padding:7px;">{{$datos->hora_entrada}}</th>
-            <th style="border: 1px solid black; text-align: center;padding:7px;">{{$datos->hora_salida}}</th>
-            <th style="border: 1px solid black;text-align: center;padding:7px;">{{$datos->distributivos->hora_inicio}}</th>
-            <th style="border: 1px solid black; text-align: center;padding:7px;">{{$datos->distributivos->hora_fin}}</th>
-            <th style="border: 1px solid black;text-align: center;padding:7px;">{{$datos->estado}}</th>
-          </tr>
+          @foreach ($datos as $index)
+          <th style="border: 1px solid black; text-align: center;">{{$index->distributivos->usuarios->cedula}}</th>
+          <th style="border: 1px solid black;text-align: center;">{{$index->distributivos->usuarios->name}}</th>
+          <th style="border: 1px solid black;text-align: center;">{{$index->distributivos->materia}}</th>
+          <th style="border: 1px solid black;text-align: center;">{{$index->distributivos->dia}}</th>
+          <th style="border: 1px solid black;text-align: center;">{{$index->distributivos->tipo_clase}}</th>
+          <th style="border: 1px solid black;text-align: center;">{{$index->hora_entrada}}</th>
+          <th style="border: 1px solid black;text-align: center;">{{$index->hora_salida}}</th>
+          <th style="border: 1px solid black;text-align: center;">{{$index->distributivos->hora_inicio}}</th>
+          <th style="border: 1px solid black;text-align: center;">{{$index->distributivos->hora_fin}}</th>
+          <th style="border: 1px solid black;text-align: center;">{{$index->estado}}</th>
+          @endforeach
         </tbody>
       </table>
 

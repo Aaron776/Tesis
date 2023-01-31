@@ -10,17 +10,17 @@
                     <div class="card">
                         @can('crear-rol')
                             <div class="card-header">
-                                 <a class="btn btn-primary" href="{{route('roles.create')}}">Agregar Nuevo Rol</a>
+                                 <a class="btn btn-primary" href="{{route('roles.create')}}">Agregar Rol</a>
                             </div>
                         @endcan
                         <div class="card-body">
                             @if(Session::has('success'))
-                                <div class="alert alert-success text-center">
+                                <div class="alert alert-success text-center" role="alert">
                                     {{Session::get('success')}} 
                                 </div>
                             @endif
                             @if(Session::has('danger'))
-                                <div class="alert alert-danger text-center">
+                                <div class="alert alert-danger text-center" role="alert">
                                     {{Session::get('danger')}} 
                                 </div>
                             @endif

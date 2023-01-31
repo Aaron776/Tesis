@@ -7,7 +7,7 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-body">
-                            @if ($errors->any())
+                            <!--@if ($errors->any())
                                 <div class="alert alert-dark slert-dismissible fade show" role="alert">
                                     <strong>!Revise los campos¡</strong>
                                     @foreach ($errors->all() as $error)
@@ -17,7 +17,7 @@
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
-                            @endif
+                            @endif-->
 
                             {!! Form::model($role,['method'=>"PUT",'route'=>['roles.update',$role->id]]) !!}
                                 <div class="row">
@@ -25,6 +25,9 @@
                                         <div class="form-group">
                                             <label for="">Nombre de Rol</label>
                                             {!! Form::text('name',null,array('class'=>'form-control')) !!}
+                                            @error('name')
+                                          <span style="color:red;">{{$message}}</span>  
+                                        @enderror
                                         </div>
                                     </div>
                                     <div clas="col-xs-12 col-sm-12 col-md-12">
@@ -37,6 +40,9 @@
                                                 <br/>
                                             @endforeach
                                         </div>
+                                        @error('record')
+                                          <span style="color:red;">{{$message}}</span>  
+                                        @enderror
                                     </div>
                                 </div>
                                 <button type="submit" class="btn btn-primary">Guardar</button>

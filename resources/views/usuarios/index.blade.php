@@ -15,13 +15,13 @@
             @endcan
               <div class="card-body">
                 @if(Session::has('success'))
-                    <div class="alert alert-success text-center">
+                    <div class="alert alert-success text-center" role="alert">
                       {{Session::get('success')}} 
                     </div>
                   @endif
 
                   @if(Session::has('danger'))
-                    <div class="alert alert-danger text-center">
+                    <div class="alert alert-danger text-center" role="alert">
                       {{Session::get('danger')}} 
                     </div>
                   @endif

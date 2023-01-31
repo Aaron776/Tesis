@@ -324,24 +324,21 @@ return [
             'can'  => 'ver-docentes',
             'submenu' => [
                 [
-                    'text' => 'Clases Presenciales',
+                    'text' => 'Modalidad Presencial',
                     'url'  => 'presenciales',
                 ],
                 [
-                    'text' => 'Clases Virtuales',
+                    'text' => 'Modalidad Virtual',
                     'url'  => 'virtuales',
                 ],
             ],
         ],
         [
             'text' => 'Biométrico',
-            'url'  => 'biometrico',
+            'route'  => 'biometrico.create',
+            'icon' => 'fas fa-fw fa-fingerprint',
+            'can'=> 'marcar-biometrico'
         ],
-        /*[
-            'text' => 'Blogs',
-            'url'  => 'blogs',
-            'can'  => 'ver-blog',
-        ],*/
     ],
 
     /*

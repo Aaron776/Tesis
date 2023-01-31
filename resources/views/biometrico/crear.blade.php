@@ -20,10 +20,21 @@
                                 </div>
                             @endif
 
+                            @if(Session::has('success'))
+                                <div class="alert alert-success text-center" role="alert">
+                                {{Session::get('success')}} 
+                                </div>
+                            @endif
 
-                           {!! Form::open(['route'=>'biometricos.store']) !!}
-
-                           {!! Form::select('id_distributivo', $datos, null, ['class'=>'form-control']) !!}
+                           {!! Form::open(['route'=>'biometrico.store']) !!}
+                           
+                            <div class="form-group">
+                                <label for="roles">Materia</label>
+                                {!! Form::select('id_distributivo',$materia,[],array('class'=>'form-control')) !!}
+                                @error('roles')
+                                  <span style="color:red;">{{$message}}</span>  
+                                @enderror
+                            </div>
                            {!! Form::label(null, 'Hora de entrada: ', null) !!}
                            {!! Form::time('hora_entrada', null, ['class'=>'form-control']) !!}
 
@@ -31,7 +42,7 @@
                            {!! Form::time('hora_salida', null, ['class'=>'form-control']) !!}
                     
                            <div class="form-group">
-                            <p class="font-weight-bold">Estado: </p>
+                            <p class="font-weight-bold">Situación: </p>
                                 <label class="mr-2">
                                     {!! Form::radio('estado', 'Atrasado') !!}
                                     Atrasado

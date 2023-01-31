@@ -16,8 +16,6 @@
                         <th scope="col">Nombre Completo</th>
                         <th scope="col">Teléfono</th>
                         <th scope="col">Email</th>
-                        <th scope="col">Asignatura</th>
-                        <th scope="col">Modalidad</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -28,8 +26,9 @@
                               <th>{{$index->usuarios->name}}</th>
                               <th>{{$index->usuarios->telefono}}</th>
                               <td>{{$index->usuarios->email}}</td>
-                              <td>{{$index->materia}}</td>
-                              <td>{{$index->tipo_clase}}</td>
+                              <td>
+                                <a href="{{route('biometrico.index',$index->id)}}" class="btn btn-primary">Ver Biometrico</a>
+                              </td>
                             </tr>
                             @endif
                         @endforeach

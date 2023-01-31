@@ -67,7 +67,7 @@ class UsuarioController extends Controller
         $user = User::create($input);
         $user->assignRole($request->input('roles'));
     
-        return redirect()->route('usuarios.index')->with('success','¡Usuario agregado con exito!');
+        return redirect()->route('usuarios.index')->with('success','¡Usuario agregado con éxito!');
     }
 
     /**
@@ -127,7 +127,7 @@ class UsuarioController extends Controller
     
         $user->assignRole($request->input('roles'));
     
-        return redirect()->route('usuarios.index')->with('success','¡Usuario actualizado con exito!');;
+        return redirect()->route('usuarios.index')->with('success','¡Usuario actualizado con éxito!');;
     }
 
     /**

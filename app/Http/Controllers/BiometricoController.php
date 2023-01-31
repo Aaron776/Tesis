@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Biometrico;
 use App\Models\Distributivo;
-use App\Models\User;
 use Barryvdh\DomPDF\Facade\Pdf;
-
+use Barryvdh\Snappy\Facades\SnappyPdf;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
 
 class BiometricoController extends Controller
 {
@@ -22,10 +23,11 @@ class BiometricoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        $biometricos=Biometrico::all();
-        return view('biometrico.index',compact('biometricos'));
+    public function index($id)
+    { 
+        $ruta=Route::current()->parameter('id');
+        $biometrico=Biometrico::where('id_distributivo','=',$id)->get(); 
+        return view('biometrico.index',compact('biometrico','ruta'));
     }
 
     /**
@@ -36,7 +38,7 @@ class BiometricoController extends Controller
     
     public function crearPDF($id)
     {
-        $datos=Biometrico::find($id);
+        $datos=Biometrico::where('id_distributivo','=',$id)->get();
         $pdf=PDF::loadView('reporte.pdf',compact('datos'))->setPaper('a4', 'landscape');
         return $pdf->stream();
     }
@@ -45,8 +47,10 @@ class BiometricoController extends Controller
 
     public function create()
     {
-        $datos=Biometrico::pluck('id_distributivo');
-        return view('biometrico.crear',compact('datos'));
+        $user=Auth::user();
+        $datos=Biometrico::all();
+        $materia=Distributivo::where('id_usuario','=',$user->id)->pluck('materia','id');
+        return view('biometrico.crear',compact('datos','materia'));
     }
 
     /**
@@ -58,17 +62,13 @@ class BiometricoController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'id_distributivo',
             'hora_entrada'=> 'required',
             'hora_salida'=> 'required',
             'estado' => 'required'
         ]);
         Biometrico::create($request->all());
-
-        /*User::all()->except($biometrico->user_id)->each(function(User $user) use ($biometrico){
-            $user->notify(new EstadoNotification($biometrico));
-        });*/
-
-        return redirect()->route('biometrico.index')->with('success','!Registro exitoso¡');
+        return redirect()->route('biometrico.create')->with('success','!Registro exitoso¡');
     }
 
     /**

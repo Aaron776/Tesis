@@ -8,20 +8,13 @@
   <div class="row">
       <div class="col-lg-12">
           <div class="card">
-            @can('marcar-biometrico')
-              <div class="card-header">
-                  <h2 style='text-align:center;'> Registro de Biométrico</h2>
-                
-              </div>
-            @endcan
               <div class="card-body">
-                @can('marcar-biometrico')
-                  <div class="card-header">
-                      <a href="{{route('biometricos.create')}}" class='btn btn-primary'>Registrar</a>
-                  </div>
-                @endcan
-
-                  @can('ver-biometrico')
+                
+                @can('generar-reporte')
+                <a href="{{route('reportes.crearPDF',$ruta)}}" class="btn btn-primary">Generar Reporte</a>
+                @endcan 
+                  
+                @can('ver-biometrico')
                   <table class="table table-striped table-hover" id="biometricos">
                     <thead>
                       <tr>
@@ -32,12 +25,12 @@
                         <th scope="col">Modalidad</th>
                         <th scope="col">Hora Llegada</th>
                         <th scope="col">Hora Salida</th>
-                        <th scope="col">Estado</th>
-                        <th scope="col"></th>
+                        <th scope="col">Situación</th>
                       </tr>
                     </thead>
                     <tbody>
-                        @foreach($biometricos as $index)
+                  
+                      @foreach($biometrico as $index) 
                       <tr>
                         <th>{{$index->distributivos->usuarios->cedula}}</th>
                         <th>{{$index->distributivos->usuarios->name}}</th>
@@ -47,13 +40,9 @@
                         <th>{{$index->hora_entrada}}</th>
                         <th>{{$index->hora_salida}}</th>
                         <th>{{$index->estado}}</th>
-                        <th>
-                          @can('generar-reporte')
-                            <a href="{{route('reportes.pdf',$index)}}" class="btn btn-primary">Reporte</a>
-                          @endcan 
-                        </th>
+
                       </tr>
-                      @endforeach
+                      @endforeach 
                     </tbody>
                   </table> 
                   @endcan

@@ -83,6 +83,8 @@ class User extends Authenticatable
         );
     }
 
+    
+
     public function distributivos(){
         return $this->hasMany(Distributivo::class,'id');
     }
