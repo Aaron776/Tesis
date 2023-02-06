@@ -313,7 +313,7 @@ return [
             'icon' => 'fas fa-fw fa-users',
         ],
         [
-            'text' => 'Roles',
+            'text' => 'Roles y Permisos',
             'url'  => 'roles',
             'can'  => 'ver-rol',
             'icon' => 'fas fa-users-cog fa-fw'

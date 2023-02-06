@@ -62,10 +62,11 @@ class BiometricoController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'id_distributivo',
+            'id_distributivo'=>'required',
             'hora_entrada'=> 'required',
             'hora_salida'=> 'required',
-            'estado' => 'required'
+            'estado' => 'required',
+            'fecha_registro'=>'required'
         ]);
         Biometrico::create($request->all());
         return redirect()->route('biometrico.create')->with('success','!Registro exitoso¡');

@@ -20,6 +20,7 @@ return new class extends Migration
             $table->time('hora_entrada');
             $table->time('hora_salida');
             $table->enum('estado',['Atrasado','No dio clases','Esta todo bien']);
+            $table->date('fecha_registro');
             $table->timestamps();
 
             $table->foreign('id_distributivo')->references('id')->on('distributivos')->onDelete('cascade');

@@ -8,12 +8,12 @@
   <div class="row">
       <div class="col-lg-12">
           <div class="card">
-              <div class="card-body">
-                
-                @can('generar-reporte')
+            <div class="card-header">
+              @can('generar-reporte')
                 <a href="{{route('reportes.crearPDF',$ruta)}}" class="btn btn-primary">Generar Reporte</a>
                 @endcan 
-                  
+            </div>
+              <div class="card-body">
                 @can('ver-biometrico')
                   <table class="table table-striped table-hover" id="biometricos">
                     <thead>
@@ -23,6 +23,7 @@
                         <th scope="col">Asignatura</th>
                         <th scope="col">Día</th>
                         <th scope="col">Modalidad</th>
+                        <th scope="col">Fecha Registro</th>
                         <th scope="col">Hora Llegada</th>
                         <th scope="col">Hora Salida</th>
                         <th scope="col">Situación</th>
@@ -37,6 +38,7 @@
                         <th>{{$index->distributivos->materia}}</th>
                         <th>{{$index->distributivos->dia}}</th>
                         <th>{{$index->distributivos->tipo_clase}}</th>
+                        <th>{{$index->fecha_registro}}</th>
                         <th>{{$index->hora_entrada}}</th>
                         <th>{{$index->hora_salida}}</th>
                         <th>{{$index->estado}}</th>

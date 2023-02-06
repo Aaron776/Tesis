@@ -31,16 +31,33 @@
                             <div class="form-group">
                                 <label for="roles">Materia</label>
                                 {!! Form::select('id_distributivo',$materia,[],array('class'=>'form-control')) !!}
-                                @error('roles')
+                                @error('id_distributivo')
                                   <span style="color:red;">{{$message}}</span>  
                                 @enderror
                             </div>
-                           {!! Form::label(null, 'Hora de entrada: ', null) !!}
-                           {!! Form::time('hora_entrada', null, ['class'=>'form-control']) !!}
+                            <div class="form-group">
+                                {!! Form::label(null, 'Fecha: ', null) !!}
+                                {!! Form::date('fecha_registro', null, ['class'=>'form-control','min'=>'2023-01-01']) !!}
+                                @error('fecha_registro')
+                                 <span style="color:red;">{{$message}}</span>  
+                                @enderror
+                            </div>
 
-                           {!! Form::label(null, 'Hora de Salida: ', null) !!}
-                           {!! Form::time('hora_salida', null, ['class'=>'form-control']) !!}
-                    
+                            <div class="form-group">
+                              {!! Form::label(null, 'Hora de entrada: ', null) !!}
+                              {!! Form::time('hora_entrada', null, ['class'=>'form-control']) !!}
+                              @error('hora_entrada')
+                                  <span style="color:red;">{{$message}}</span>  
+                              @enderror
+                           </div>
+
+                           <div class="form-group">
+                            {!! Form::label(null, 'Hora de Salida: ', null) !!}
+                            {!! Form::time('hora_salida', null, ['class'=>'form-control']) !!}
+                            @error('hora_salida')
+                                    <span style="color:red;">{{$message}}</span>  
+                            @enderror
+                           </div>
                            <div class="form-group">
                             <p class="font-weight-bold">Situación: </p>
                                 <label class="mr-2">

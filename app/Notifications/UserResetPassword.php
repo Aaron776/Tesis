@@ -42,9 +42,9 @@ class UserResetPassword extends Notification
     {
         return (new MailMessage)
                     ->subject('Reseteo de contraseña.')
-                    ->greeting('Hola que tal')
-                    ->line('Hemos recibido una peticion para el reinicio de tu contraseña.')
-                    ->action('Resetear Contraseña', url('/password/reset'.$this->token))
+                    ->greeting('Hola mucho gusto')
+                    ->line('Hemos recibido una petición para resetar de tu contraseña.')
+                    ->action('Resetear Contraseña', url('/password/reset/'.$this->token))
                     ->line('Si tu no has hecho esta petición no hagas nada');
     }
 

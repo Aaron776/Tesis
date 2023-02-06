@@ -31,21 +31,25 @@
             <th style="border: 1px solid black; text-align: center;">Hora Inicio Clase</th>
             <th style="border: 1px solid black;text-align: center;">Hora Fin Clase</th>
             <th style="border: 1px solid black; text-align: center;">Situación</th>
+            <th style="border: 1px solid black; text-align: center;">Fecha Registro</th>
     
           </tr>
         </thead>
         <tbody>
           @foreach ($datos as $index)
-          <th style="border: 1px solid black; text-align: center;">{{$index->distributivos->usuarios->cedula}}</th>
-          <th style="border: 1px solid black;text-align: center;">{{$index->distributivos->usuarios->name}}</th>
-          <th style="border: 1px solid black;text-align: center;">{{$index->distributivos->materia}}</th>
-          <th style="border: 1px solid black;text-align: center;">{{$index->distributivos->dia}}</th>
-          <th style="border: 1px solid black;text-align: center;">{{$index->distributivos->tipo_clase}}</th>
-          <th style="border: 1px solid black;text-align: center;">{{$index->hora_entrada}}</th>
-          <th style="border: 1px solid black;text-align: center;">{{$index->hora_salida}}</th>
-          <th style="border: 1px solid black;text-align: center;">{{$index->distributivos->hora_inicio}}</th>
-          <th style="border: 1px solid black;text-align: center;">{{$index->distributivos->hora_fin}}</th>
-          <th style="border: 1px solid black;text-align: center;">{{$index->estado}}</th>
+          <tr>
+            <th style="border: 1px solid black; text-align: center;">{{$index->distributivos->usuarios->cedula}}</th>
+            <th style="border: 1px solid black;text-align: center;">{{$index->distributivos->usuarios->name}}</th>
+            <th style="border: 1px solid black;text-align: center;">{{$index->distributivos->materia}}</th>
+            <th style="border: 1px solid black;text-align: center;">{{$index->distributivos->dia}}</th>
+            <th style="border: 1px solid black;text-align: center;">{{$index->distributivos->tipo_clase}}</th>
+            <th style="border: 1px solid black;text-align: center;">{{$index->hora_entrada}}</th>
+            <th style="border: 1px solid black;text-align: center;">{{$index->hora_salida}}</th>
+            <th style="border: 1px solid black;text-align: center;">{{$index->distributivos->hora_inicio}}</th>
+            <th style="border: 1px solid black;text-align: center;">{{$index->distributivos->hora_fin}}</th>
+            <th style="border: 1px solid black;text-align: center;">{{$index->estado}}</th>
+            <th style="border: 1px solid black;text-align: center;">{{$index->fecha_registro}}</th>
+          </tr>
           @endforeach
         </tbody>
       </table>
