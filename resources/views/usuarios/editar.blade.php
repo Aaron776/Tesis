@@ -77,7 +77,7 @@
                                     </div>
                                     <div clas="col-xs-12 col-sm-12 col-md-12">
                                         <div class="form-group">
-                                            <label for="roles">Roles</label>
+                                            <label for="roles">Rol: </label>
                                             {!! Form::select('roles[]',$roles,$userRole,array('class'=>'form-control')) !!}
                                             @error('roles')
                                               <span style="color:red;">{{$message}}</span>  

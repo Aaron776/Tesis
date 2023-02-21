@@ -319,25 +319,22 @@ return [
             'icon' => 'fas fa-users-cog fa-fw'
         ],
         [
-            'text'    => 'Docentes Invitados',
+            'text' => 'Distributivos',
+            'route'  => 'distributivo.create',
+            'can'  => 'crear-distributivos',
+            'icon' => 'far fa-fw fa-file'
+        ],
+        [
+            'text' => 'Docentes Invitados',
+            'url'  => 'docentes',
             'icon'    => 'fab fa-fw fa-buffer',
             'can'  => 'ver-docentes',
-            'submenu' => [
-                [
-                    'text' => 'Modalidad Presencial',
-                    'url'  => 'presenciales',
-                ],
-                [
-                    'text' => 'Modalidad Virtual',
-                    'url'  => 'virtuales',
-                ],
-            ],
         ],
         [
             'text' => 'Biométrico',
             'route'  => 'biometrico.create',
             'icon' => 'fas fa-fw fa-fingerprint',
-            'can'=> 'marcar-biometrico'
+            'can'=> 'marcar-biométrico'
         ],
     ],
 

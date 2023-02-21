@@ -20,10 +20,11 @@ return new class extends Migration
             $table->bigInteger('id_materia')->unsigned();
             $table->bigInteger('id_periodo')->unsigned();
             $table->string('tipo_clase');
-            $table->string('materia');
+            $table->string('materia')->nullable();
             $table->string('dia');
             $table->time('hora_inicio');
             $table->time('hora_fin');
+            $table->timestamps();
 
             $table->foreign('id_usuario')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('id_materia')->references('id')->on('materias')->onDelete('cascade');

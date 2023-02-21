@@ -55,7 +55,7 @@ class UsuarioController extends Controller
         $this->validate($request, [
             'cedula' => 'required|max:10|min:10|unique:users,cedula',
             'name' => 'required',
-            'telefono' => 'required|max:10|min:10',
+            'telefono' => 'required|max:10|min:10|unique:users,telefono',
             'email' => 'required|email|unique:users,email',
             'password' => 'required|same:confirm-password',
             'roles' => 'required'

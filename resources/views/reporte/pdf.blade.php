@@ -17,7 +17,7 @@
     <img style="margin-left: 450px;" src="https://univercimas.com/wp-content/uploads/2021/05/Logo-de-la-Universidad-Iberoamericana-del-Ecuador-UNIBE-300x300.png" width="150px">
   </div>
   
-  <h2 style="text-align: center;">Reporte</h2>
+  <h2 style="text-align: center;">Reporte Mensual</h2>
   <table class="table table-hover mt-4" style="border: 1px solid black;">
         <thead>
           <tr style="border: 1px solid black;">
@@ -26,12 +26,12 @@
             <th style="border: 1px solid black; text-align: center;">Asignatura</th>
             <th style="border: 1px solid black; text-align: center;">Día</th>
             <th style="border: 1px solid black; text-align: center;">Modalidad</th>
+            <th style="border: 1px solid black; text-align: center;">Fecha Registro</th>
             <th style="border: 1px solid black; text-align: center;">Hora Llegada</th>
             <th style="border: 1px solid black; text-align: center;">Hora Salida</th>
             <th style="border: 1px solid black; text-align: center;">Hora Inicio Clase</th>
             <th style="border: 1px solid black;text-align: center;">Hora Fin Clase</th>
             <th style="border: 1px solid black; text-align: center;">Situación</th>
-            <th style="border: 1px solid black; text-align: center;">Fecha Registro</th>
     
           </tr>
         </thead>
@@ -40,15 +40,15 @@
           <tr>
             <th style="border: 1px solid black; text-align: center;">{{$index->distributivos->usuarios->cedula}}</th>
             <th style="border: 1px solid black;text-align: center;">{{$index->distributivos->usuarios->name}}</th>
-            <th style="border: 1px solid black;text-align: center;">{{$index->distributivos->materia}}</th>
+            <th style="border: 1px solid black;text-align: center;">{{$index->distributivos->materias->nombre}}</th>
             <th style="border: 1px solid black;text-align: center;">{{$index->distributivos->dia}}</th>
             <th style="border: 1px solid black;text-align: center;">{{$index->distributivos->tipo_clase}}</th>
+            <th style="border: 1px solid black;text-align: center;">{{$index->fecha_registro}}</th>
             <th style="border: 1px solid black;text-align: center;">{{$index->hora_entrada}}</th>
             <th style="border: 1px solid black;text-align: center;">{{$index->hora_salida}}</th>
             <th style="border: 1px solid black;text-align: center;">{{$index->distributivos->hora_inicio}}</th>
             <th style="border: 1px solid black;text-align: center;">{{$index->distributivos->hora_fin}}</th>
             <th style="border: 1px solid black;text-align: center;">{{$index->estado}}</th>
-            <th style="border: 1px solid black;text-align: center;">{{$index->fecha_registro}}</th>
           </tr>
           @endforeach
         </tbody>

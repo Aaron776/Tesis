@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Distributivo;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 
-class DocentePresencialController extends Controller
+class DocenteController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class DocentePresencialController extends Controller
      */
     public function index()
     {
-        $docentes=Distributivo::all();
-        return view('docente.presencial.index',compact('docentes'));
+        $docentes=User::all();
+        return view('docente.todos.index',compact('docentes'));
     }
 
     /**

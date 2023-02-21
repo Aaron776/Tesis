@@ -6,6 +6,7 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
+use Illuminate\Auth\Notifications\ResetPassword;
 
 class UserResetPassword extends Notification
 {
@@ -44,7 +45,7 @@ class UserResetPassword extends Notification
                     ->subject('Reseteo de contraseña.')
                     ->greeting('Hola mucho gusto')
                     ->line('Hemos recibido una petición para resetar de tu contraseña.')
-                    ->action('Resetear Contraseña', url('/password/reset/'.$this->token))
+                    ->action('Resetear Contraseña', url('reset-password/'.$this->token))
                     ->line('Si tu no has hecho esta petición no hagas nada');
     }
 

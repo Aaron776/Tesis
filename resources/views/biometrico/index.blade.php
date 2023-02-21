@@ -14,7 +14,6 @@
                 @endcan 
             </div>
               <div class="card-body">
-                @can('ver-biometrico')
                   <table class="table table-striped table-hover" id="biometricos">
                     <thead>
                       <tr>
@@ -35,19 +34,17 @@
                       <tr>
                         <th>{{$index->distributivos->usuarios->cedula}}</th>
                         <th>{{$index->distributivos->usuarios->name}}</th>
-                        <th>{{$index->distributivos->materia}}</th>
+                        <th>{{$index->distributivos->materias->nombre}}</th>
                         <th>{{$index->distributivos->dia}}</th>
                         <th>{{$index->distributivos->tipo_clase}}</th>
                         <th>{{$index->fecha_registro}}</th>
                         <th>{{$index->hora_entrada}}</th>
                         <th>{{$index->hora_salida}}</th>
                         <th>{{$index->estado}}</th>
-
                       </tr>
                       @endforeach 
                     </tbody>
                   </table> 
-                  @endcan
                   </div>
                 </div>
             </div>

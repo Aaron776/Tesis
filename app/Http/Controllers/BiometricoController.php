@@ -5,9 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Biometrico;
 use App\Models\Distributivo;
 use Barryvdh\DomPDF\Facade\Pdf;
-use Barryvdh\Snappy\Facades\SnappyPdf;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
 class BiometricoController extends Controller
@@ -15,8 +15,9 @@ class BiometricoController extends Controller
     
     function __construct()
     {
-         $this->middleware('permission:ver-biometrico|marcar-biometrico')->only('index');
-         $this->middleware('permission:marcar-biometrico', ['only' => ['create','store']]);
+         $this->middleware('permission:ver-biométrico')->only('index');
+         $this->middleware('permission:marcar-biométrico', ['only' => ['create','store']]);
+         $this->middleware('permission:generar-reporte')->only('crearPDF');
     }
     /**
      * Display a listing of the resource.
@@ -48,9 +49,8 @@ class BiometricoController extends Controller
     public function create()
     {
         $user=Auth::user();
-        $datos=Biometrico::all();
-        $materia=Distributivo::where('id_usuario','=',$user->id)->pluck('materia','id');
-        return view('biometrico.crear',compact('datos','materia'));
+        $materia=Distributivo::where('id_usuario','=',$user->id)->select('materia','id','dia','id_materia')->get();
+        return view('biometrico.crear',compact('materia'));
     }
 
     /**

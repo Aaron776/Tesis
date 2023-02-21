@@ -55,7 +55,7 @@ class RolController extends Controller
         $role=Role::create(['name'=>$request->input('name')]);
         $role->syncPermissions($request->input('permission'));
 
-        return redirect()->route('roles.index')->with('success','¡Rol creado con exito!');
+        return redirect()->route('roles.index')->with('success','¡Rol creado con éxito!');
     }
 
     /**
@@ -105,7 +105,7 @@ class RolController extends Controller
     
         $role->syncPermissions($request->input('permission'));
     
-        return redirect()->route('roles.index')->with('success','¡Rol actualizado con exito!');  
+        return redirect()->route('roles.index')->with('success','¡Rol actualizado con éxito!');  
     }
 
     /**

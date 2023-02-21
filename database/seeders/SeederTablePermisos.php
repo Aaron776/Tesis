@@ -24,12 +24,6 @@ class SeederTablePermisos extends Seeder
             'editar-rol',
             'borrar-rol',
 
-            /*Operaciones en la tabla blogs
-            'ver-blog',
-            'crear-blog',
-            'editar-blog',
-            'borrar-blog',*/
-
              //Operaciones en la tabla usuario
             'ver-usuario',
             'crear-usuario',
@@ -40,12 +34,15 @@ class SeederTablePermisos extends Seeder
             'generar-reporte',
 
             // Biometrico
-            'marcar-biometrico',
-            'ver-biometrico',
+            'marcar-biométrico',
+            'ver-biométrico',
 
             // Docentes
-            'ver-docentes'
+            'ver-docentes',
 
+            // Distributivos
+            'ver-distributivo',
+            'crear-distributivos'
             
     
 

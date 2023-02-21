@@ -1,5 +1,5 @@
 @extends('dash.index')
-@section('title','Docentes Invitados Presenciales')
+@section('title','Distributivos')
 @section('css')
 <link href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap5.min.css" rel="stylesheet">
 @endsection
@@ -9,29 +9,30 @@
       <div class="col-lg-12">
           <div class="card">
               <div class="card-body">
-                  <table class="table table-striped table-hover" id="docentes_presenciales">
+                  <table class="table table-striped table-hover" id="distributivo">
                     <thead>
                       <tr>
                         <th scope="col">Cédula</th>
                         <th scope="col">Nombre Completo</th>
-                        <th scope="col">Teléfono</th>
-                        <th scope="col">Email</th>
+                        <th scope="col">Asignatura</th>
+                        <th scope="col">Día</th>
+                        <th scope="col">Modalidad</th>
                       </tr>
                     </thead>
                     <tbody>
-                        @foreach($docentes as $index)
-                          @if($index->tipo_clase=="Presencial")
-                            <tr>
-                              <th>{{$index->usuarios->cedula}}</th>
-                              <th>{{$index->usuarios->name}}</th>
-                              <th>{{$index->usuarios->telefono}}</th>
-                              <td>{{$index->usuarios->email}}</td>
-                              <td>
-                                <a href="{{route('biometrico.index',$index->id)}}" class="btn btn-primary">Ver Biometrico</a>
-                              </td>
-                            </tr>
-                            @endif
-                        @endforeach
+                  
+                      @foreach($distributivos as $index) 
+                      <tr>
+                        <th>{{$index->usuarios->cedula}}</th>
+                        <th>{{$index->usuarios->name}}</th>
+                        <th>{{$index->materias->nombre}}</th>
+                        <th>{{$index->dia}}</th>
+                        <th>{{$index->tipo_clase}}</th>
+                        <td>
+                            <a href="{{route('biometrico.index',$index->id)}}" class="btn btn-primary">Ver Biométrico</a>
+                        </td>
+                      </tr>
+                      @endforeach 
                     </tbody>
                   </table> 
                   </div>
@@ -48,7 +49,7 @@
   <script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap5.min.js"></script>
   <script>
       $(document).ready(function(){
-          $('#docentes_presenciales').DataTable(
+          $('#distributivo').DataTable(
               {
                   "lengthMenu":[[5,10,50,-1],[5,10,50,"Todos"]],
                   "language": {

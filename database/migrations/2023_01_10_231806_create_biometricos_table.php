@@ -19,7 +19,7 @@ return new class extends Migration
             $table->bigInteger('id_distributivo')->unsigned();
             $table->time('hora_entrada');
             $table->time('hora_salida');
-            $table->enum('estado',['Atrasado','No dio clases','Esta todo bien']);
+            $table->enum('estado',['Atrasado','No dio clases','Está todo bien']);
             $table->date('fecha_registro');
             $table->timestamps();
 

@@ -1,5 +1,5 @@
 @extends('dash.index')
-@section('title','Docentes Invitados Virtuales')
+@section('title','Docentes Invitados')
 @section('css')
 <link href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap5.min.css" rel="stylesheet">
 @endsection
@@ -9,7 +9,7 @@
       <div class="col-lg-12">
           <div class="card">
               <div class="card-body">
-                  <table class="table table-striped table-hover" id="docentes_virtuales">
+                  <table class="table table-striped table-hover" id="docentes">
                     <thead>
                       <tr>
                         <th scope="col">Cédula</th>
@@ -20,17 +20,19 @@
                     </thead>
                     <tbody>
                         @foreach($docentes as $index)
-                          @if($index->tipo_clase=="Virtual")
+                        @foreach($index->getRoleNames() as $rolName)
+                          @if($rolName=='Docente Invitado')
                             <tr>
-                              <th>{{$index->usuarios->cedula}}</th>
-                              <th>{{$index->usuarios->name}}</th>
-                              <th>{{$index->usuarios->telefono}}</th>
-                              <td>{{$index->usuarios->email}}</td>
+                              <th>{{$index->cedula}}</th>
+                              <th>{{$index->name}}</th>
+                              <th>{{$index->telefono}}</th>
+                              <td>{{$index->email}}</td>
                               <td>
-                                <a href="{{route('biometrico.index',$index->id)}}" class="btn btn-primary">Ver Biometrico</a>
+                                <a href="{{route('distributivo.index',$index->id)}}" class="btn btn-primary">Ver Distributivos</a>
                               </td>
                             </tr>
                             @endif
+                        @endforeach   
                         @endforeach
                     </tbody>
                   </table> 
@@ -48,7 +50,7 @@
   <script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap5.min.js"></script>
   <script>
       $(document).ready(function(){
-          $('#docentes_virtuales').DataTable(
+          $('#docentes').DataTable(
               {
                   "lengthMenu":[[5,10,50,-1],[5,10,50,"Todos"]],
                   "language": {

@@ -7,18 +7,6 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-body">
-                            @if ($errors->any())
-
-                                <div class="alert alert-dark slert-dismissible fade show" role="alert">
-                                    <strong>!Revise los Campos¡ </strong>
-                                    @foreach ($errors->all() as $error)
-                                        <span class="badge badge-danger">{{$error}}</span>
-                                    @endforeach
-                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                            @endif
 
                             @if(Session::has('success'))
                                 <div class="alert alert-success text-center" role="alert">
@@ -28,23 +16,29 @@
 
                            {!! Form::open(['route'=>'biometrico.store']) !!}
                            
-                            <div class="form-group">
-                                <label for="roles">Materia</label>
-                                {!! Form::select('id_distributivo',$materia,[],array('class'=>'form-control')) !!}
-                                @error('id_distributivo')
-                                  <span style="color:red;">{{$message}}</span>  
-                                @enderror
-                            </div>
+        
+                           <div class="form-group"> 
+                            <label>Asignatura: </label>   
+                            <select name="id_distributivo" class="form-control">
+                                @foreach ($materia as $item)
+                                    <option value="{{$item->id}}">{{$item->materias->nombre}} ({{$item->dia}})</option>
+                                @endforeach 
+                            </select>
+                            @error('id_distributivo')
+                                <span style="color:red;">{{$message}}</span>  
+                            @enderror
+                           </div>
+
                             <div class="form-group">
                                 {!! Form::label(null, 'Fecha: ', null) !!}
-                                {!! Form::date('fecha_registro', null, ['class'=>'form-control','min'=>'2023-01-01']) !!}
+                                {!! Form::date('fecha_registro', null, ['class'=>'form-control','min'=>'2023-02-01']) !!}
                                 @error('fecha_registro')
                                  <span style="color:red;">{{$message}}</span>  
                                 @enderror
                             </div>
 
                             <div class="form-group">
-                              {!! Form::label(null, 'Hora de entrada: ', null) !!}
+                              {!! Form::label(null, 'Hora de Entrada: ', null) !!}
                               {!! Form::time('hora_entrada', null, ['class'=>'form-control']) !!}
                               @error('hora_entrada')
                                   <span style="color:red;">{{$message}}</span>  
@@ -69,7 +63,7 @@
                                     No dio clases
                                 </label>
                                 <label class="mr-2">
-                                    {!! Form::radio('estado', 'Esta todo bien') !!}
+                                    {!! Form::radio('estado', 'Está todo bien') !!}
                                     Está todo bien
                                 </label>
 

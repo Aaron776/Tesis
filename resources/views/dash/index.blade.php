@@ -12,7 +12,7 @@
 
     @extends('adminlte::page')
 
-    @section('title', 'Sistema para Control')
+    @section('title', 'Sistema para Control de Asistencias')
 
     @section('content_header')
         <h1 style="text-align:center;">Universidad Iberoamericana del Ecuador</h1>

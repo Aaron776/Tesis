@@ -1,0 +1,4 @@
+Plantilla AmdninLTE
+PLUGIN DE Datatables
+Spatie Laravel Permission para los roles y permisos
+Sweet ALert para las alertas
