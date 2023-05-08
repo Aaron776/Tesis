@@ -20,7 +20,6 @@ class DistributivoController extends Controller
          
     }
     public function index($id){
-        $ruta=Route::current()->parameter('id');
         $distributivos=Distributivo::where('id_usuario','=',$id)->get();
         return view('distributivo.index',compact('distributivos'));    
     }

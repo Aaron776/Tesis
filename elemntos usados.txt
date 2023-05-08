@@ -1,4 +1,6 @@
-Plantilla AmdninLTE
-PLUGIN DE Datatables
-Spatie Laravel Permission para los roles y permisos
-Sweet ALert para las alertas
+Plantilla AmdninLTE (video): https://www.youtube.com/watch?v=qiRfo9e8Ejg&t=548s
+PLUGIN DE Datatables (video): https://www.youtube.com/watch?v=xyGriTTRo_o&t=544s
+traducir plugin datatable (video): https://www.youtube.com/watch?v=gnJXZkrfscM
+Spatie Laravel Permission para los roles y permisos (video): https://www.youtube.com/watch?v=I4vgw0dcKwo
+Spatie Laravel Permission para los roles y permisos (video): https://www.youtube.com/watch?v=L42lLOOLB8g&list=PLZ2ovOgdI-kXghwSkvcQ1zVbsyUeYD8Wi
+Sweet ALert para las alertas (video): https://www.youtube.com/watch?v=D3Ww5FGa1mY&t=277s
