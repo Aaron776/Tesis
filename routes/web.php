@@ -37,7 +37,7 @@ Route::middleware([
 Route::group(['middleware' => ['auth']], function () {
     Route::resource('roles', RolController::class)->names('roles');
     Route::resource('usuarios', UsuarioController::class)->names('usuarios');
-    Route::resource('docentes',DocenteController::class)->names('docentes')->middleware('can:ver-docentes');
+    Route::resource('/docentes',DocenteController::class)->names('docentes')->middleware('can:ver-docentes');
     Route::get('/reporte/pdf/{id}',[App\Http\Controllers\BiometricoController::class,'crearPDF'])->name('reportes.crearPDF')->middleware('can:generar-reporte');
     Route::get('/biometrico/{id}',[App\Http\Controllers\BiometricoController::class,'index'])->name('biometrico.index');
     Route::get('/biometrico',[App\Http\Controllers\BiometricoController::class,'create'])->name('biometrico.create');
