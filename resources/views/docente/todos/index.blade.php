@@ -44,12 +44,15 @@
   @endsection
 
   @section('js')
-  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
   <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
   <script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap5.min.js"></script>
   <script>
       $(document).ready(function(){
+          if ($.fn.DataTable.isDataTable('#docentes')) {
+            $('#docentes').DataTable().destroy();
+          }
+
           $('#docentes').DataTable(
               {
                   "lengthMenu":[[5,10,50,-1],[5,10,50,"Todos"]],

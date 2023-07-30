@@ -68,6 +68,10 @@
         <script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap5.min.js"></script>
         <script>
             $(document).ready(function(){
+                if ($.fn.DataTable.isDataTable('#roles')) {
+                    $('#roles').DataTable().destroy();
+                }
+
                 $('#roles').DataTable(
                     {
                      "lengthMenu":[[5,10,50,-1],[5,10,50,"Todos"]],

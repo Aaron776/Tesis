@@ -4,3 +4,4 @@ traducir plugin datatable (video): https://www.youtube.com/watch?v=gnJXZkrfscM
 Spatie Laravel Permission para los roles y permisos (video): https://www.youtube.com/watch?v=I4vgw0dcKwo
 Spatie Laravel Permission para los roles y permisos (video): https://www.youtube.com/watch?v=L42lLOOLB8g&list=PLZ2ovOgdI-kXghwSkvcQ1zVbsyUeYD8Wi
 Sweet ALert para las alertas (video): https://www.youtube.com/watch?v=D3Ww5FGa1mY&t=277s
+Laravel Collective

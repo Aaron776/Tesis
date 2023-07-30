@@ -9,7 +9,7 @@
       <div class="col-lg-12">
           <div class="card">
               <div class="card-body">
-                  <table class="table table-striped table-hover" id="distributivo">
+                  <table class="table table-striped table-hover" id="distributivos">
                     <thead>
                       <tr>
                         <th scope="col">Cédula</th>
@@ -43,13 +43,15 @@
   @endsection
 
   @section('js')
-  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
   <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
   <script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap5.min.js"></script>
   <script>
       $(document).ready(function(){
-          $('#distributivo').DataTable(
+        if ($.fn.DataTable.isDataTable('#distributivos')) {
+            $('#distributivos').DataTable().destroy();
+          }
+          $('#distributivos').DataTable(
               {
                   "lengthMenu":[[5,10,50,-1],[5,10,50,"Todos"]],
                   "language": {
