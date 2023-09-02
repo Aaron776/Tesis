@@ -29,7 +29,7 @@
                         <th>{{$index->dia}}</th>
                         <th>{{$index->tipo_clase}}</th>
                         <td>
-                            <a href="{{route('biometrico.index',$index->id)}}" class="btn btn-primary">Ver Biométrico</a>
+                            <a href="{{route('biometrico.index',$index->id)}}" class="btn btn-info">Ver Biométrico</a>
                         </td>
                       </tr>
                       @endforeach 

@@ -94,5 +94,8 @@ class User extends Authenticatable
         $this->notify(new UserResetPassword($token));
     }
     
+    public function adminlte_image(){
+        return 'https://cdn-icons-png.flaticon.com/512/6326/6326055.png';
+    }
     
 }

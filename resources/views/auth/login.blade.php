@@ -2,9 +2,9 @@
     <!--<div class="hidden fixed top-0 right-0 px-6 py-4 sm:block ">
         <a href="{{route('register')}}" class="ml-4 text-sm text-gray-700 underline">Registrarse</a>
     </div>-->
-    <x-jet-authentication-card>
+    <x-jet-authentication-card >
         <x-slot name="logo">
-            <img src="https://univercimas.com/wp-content/uploads/2021/05/Logo-de-la-Universidad-Iberoamericana-del-Ecuador-UNIBE-300x300.png">
+            <img src="vendor/adminlte/dist/img/logo.png">
         </x-slot>
 
         <x-jet-validation-errors class="mb-4" />

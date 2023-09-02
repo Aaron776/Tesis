@@ -1,5 +1,5 @@
     @extends('dash.index')
-    @section('title','Roles')
+    @section('title','Roles y Permisos')
     @section('css')
         <link href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap5.min.css" rel="stylesheet">
     @endsection
@@ -10,7 +10,7 @@
                     <div class="card">
                         @can('crear-rol')
                             <div class="card-header">
-                                 <a class="btn btn-primary" href="{{route('roles.create')}}">Agregar Rol</a>
+                                 <a class="btn btn-info" href="{{route('roles.create')}}">Agregar Rol</a>
                             </div>
                         @endcan
                         <div class="card-body">

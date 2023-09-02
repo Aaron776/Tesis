@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Spatie\Permission\Models\Role;
 use Illuminate\Http\Request;
 
 
@@ -15,8 +16,13 @@ class DocenteController extends Controller
      */
     public function index()
     {
-        $docentes=User::all();
-        return view('docente.todos.index',compact('docentes'));
+         // Obtén el rol específico
+        $rol = Role::where('name', 'Docente Invitado')->first();
+
+        // Obtén todos los usuarios con el rol específico
+        $docentesInvitados = $rol->users;
+
+        return view('docente.todos.index',compact('docentesInvitados'));
     }
 
     /**

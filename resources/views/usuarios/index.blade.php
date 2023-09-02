@@ -10,7 +10,7 @@
           <div class="card">
             @can('crear-usuario')
                   <div class="card-header">
-                    <a class="btn btn-primary" href="{{route('usuarios.create')}}">Agregar Usuario </a>
+                    <a class="btn btn-info" href="{{route('usuarios.create')}}">Agregar Usuario </a>
                   </div>
             @endcan
               <div class="card-body">
@@ -31,7 +31,7 @@
                           <tr>
                             <th scope="col">Cédula</th>
                             <th scope="col">Nombre Completo</th>
-                            <th scope="col">Teléfono</th>
+                            <th scope="col">Celular</th>
                             <th scope="col">Email</th>
                             <th scope="col">Rol</th>
                             <th scope="col">Acciones</th>
@@ -109,7 +109,6 @@
       })
   </script>
   <script>
-
     $('.formEliminar').submit(function(e){
       e.preventDefault();
       Swal.fire({
@@ -121,11 +120,6 @@
         confirmButtonText: 'Sí,confirmar'
       }).then((result) => {
         if (result.isConfirmed) {
-          /*Swal.fire(
-            'Deleted!',
-            'Your file has been deleted.',
-            'success'
-          )*/
           this.submit();
         }
       })

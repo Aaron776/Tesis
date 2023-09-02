@@ -2,8 +2,6 @@
 
 use App\Http\Controllers\DocenteController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\DocentePresencialController;
-use App\Http\Controllers\DocenteVirtualController;
 use App\Http\Controllers\RolController;
 use App\Http\Controllers\UsuarioController;
 
@@ -39,12 +37,10 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('usuarios', UsuarioController::class)->names('usuarios');
     Route::resource('/docentes',DocenteController::class)->names('docentes')->middleware('can:ver-docentes');
     Route::get('/reporte/pdf/{id}',[App\Http\Controllers\BiometricoController::class,'crearPDF'])->name('reportes.crearPDF')->middleware('can:generar-reporte');
-    Route::get('/biometrico/{id}',[App\Http\Controllers\BiometricoController::class,'index'])->name('biometrico.index');
-    Route::get('/biometrico',[App\Http\Controllers\BiometricoController::class,'create'])->name('biometrico.create');
-    Route::post('/biometrico',[App\Http\Controllers\BiometricoController::class,'store'])->name('biometrico.store');
-    Route::get('/distributivos/{id}',[App\Http\Controllers\DistributivoController::class,'index'])->name('distributivo.index');
-    Route::get('/distributivos',[App\Http\Controllers\DistributivoController::class,'create'])->name('distributivo.create');
-    Route::post('/distributivos',[App\Http\Controllers\DistributivoController::class,'store'])->name('distributivo.store');
-    
-    
+    Route::get('/verBiometrico/{id}',[App\Http\Controllers\BiometricoController::class,'index'])->name('biometrico.index');
+    Route::get('/registrarBiometrico',[App\Http\Controllers\BiometricoController::class,'create'])->name('biometrico.create');
+    Route::post('/registrarBiometrico',[App\Http\Controllers\BiometricoController::class,'store'])->name('biometrico.store');
+    Route::get('/verDistributivos/{id}',[App\Http\Controllers\DistributivoController::class,'index'])->name('distributivo.index');
+    Route::get('/crearDistributivo',[App\Http\Controllers\DistributivoController::class,'create'])->name('distributivo.create');
+    Route::post('/crearDistributivo',[App\Http\Controllers\DistributivoController::class,'store'])->name('distributivo.store');
 });

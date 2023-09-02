@@ -22,10 +22,11 @@
         <thead>
           <tr style="border: 1px solid black;">
             <th style="border: 1px solid black; text-align: center;">Cédula</th>
-            <th style="border: 1px solid black; text-align: center;">Nombre Completo</th>
+            <th style="border: 1px solid black; text-align: center;">Docente</th>
             <th style="border: 1px solid black; text-align: center;">Asignatura</th>
             <th style="border: 1px solid black; text-align: center;">Día</th>
             <th style="border: 1px solid black; text-align: center;">Modalidad</th>
+            <th style="border: 1px solid black; text-align: center;">Escuela</th>
             <th style="border: 1px solid black; text-align: center;">Fecha Registro</th>
             <th style="border: 1px solid black; text-align: center;">Hora Llegada</th>
             <th style="border: 1px solid black; text-align: center;">Hora Salida</th>
@@ -43,6 +44,7 @@
             <th style="border: 1px solid black;text-align: center;">{{$index->distributivos->materias->nombre}}</th>
             <th style="border: 1px solid black;text-align: center;">{{$index->distributivos->dia}}</th>
             <th style="border: 1px solid black;text-align: center;">{{$index->distributivos->tipo_clase}}</th>
+            <th style="border: 1px solid black;text-align: center;">{{$index->distributivos->materias->escuelas->nombre}}</th>
             <th style="border: 1px solid black;text-align: center;">{{$index->fecha_registro}}</th>
             <th style="border: 1px solid black;text-align: center;">{{$index->hora_entrada}}</th>
             <th style="border: 1px solid black;text-align: center;">{{$index->hora_salida}}</th>

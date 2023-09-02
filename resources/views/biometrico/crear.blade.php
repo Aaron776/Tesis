@@ -53,24 +53,29 @@
                             @enderror
                            </div>
                            <div class="form-group">
-                            <p class="font-weight-bold">Situación: </p>
-                                <label class="mr-2">
-                                    {!! Form::radio('estado', 'Atrasado') !!}
-                                    Atrasado
-                                </label>
-                                <label class="mr-2">
-                                    {!! Form::radio('estado', 'No dio clases') !!}
-                                    No dio clases
-                                </label>
-                                <label class="mr-2">
-                                    {!! Form::radio('estado', 'Está todo bien') !!}
-                                    Está todo bien
-                                </label>
-
-                                <div class="form-group">
-                                    {!! Form::submit('Guardar', ['class'=>'btn btn-primary']) !!}
-                                </div>
-                        </div>
+                                <p class="font-weight-bold">Situación: </p>
+                                    <label class="mr-2">
+                                        {!! Form::radio('estado', 'Atrasado') !!}
+                                        Atrasado
+                                    </label>
+                                    <label class="mr-2">
+                                        {!! Form::radio('estado', 'No dio clases') !!}
+                                        No dio clases
+                                    </label>
+                                    <label class="mr-2">
+                                        {!! Form::radio('estado', 'Está todo bien') !!}
+                                        Está todo bien
+                                    </label>
+                                    <div class="form-group">
+                                        @error('estado')
+                                            <span style="color:red;">{{$message}}</span>  
+                                        @enderror
+                                    </div>
+                            </div>
+        
+                            <div class="form-group">
+                                {!! Form::submit('Guardar', ['class'=>'btn btn-primary']) !!}
+                            </div>
                            {!! Form::close() !!}
                         </div>
                     </div>

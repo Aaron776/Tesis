@@ -66,7 +66,8 @@ class BiometricoController extends Controller
             'hora_entrada'=> 'required',
             'hora_salida'=> 'required',
             'estado' => 'required',
-            'fecha_registro'=>'required'
+            'fecha_registro'=>'required',
+            'estado'=>'required'
         ]);
         Biometrico::create($request->all());
         return redirect()->route('biometrico.create')->with('success','!Registro exitoso¡');

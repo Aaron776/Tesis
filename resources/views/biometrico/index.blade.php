@@ -10,7 +10,7 @@
           <div class="card">
             <div class="card-header">
               @can('generar-reporte')
-                <a href="{{route('reportes.crearPDF',$ruta)}}" class="btn btn-primary">Generar Reporte</a>
+                <a href="{{route('reportes.crearPDF',$ruta)}}" class="btn btn-info">Generar Reporte</a>
                 @endcan 
             </div>
               <div class="card-body">

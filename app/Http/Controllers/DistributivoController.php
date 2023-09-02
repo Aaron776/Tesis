@@ -7,7 +7,7 @@ use App\Models\Materia;
 use App\Models\Periodo;
 use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
+use Spatie\Permission\Models\Role;
 
 class DistributivoController extends Controller
 {
@@ -27,7 +27,10 @@ class DistributivoController extends Controller
     public function create(){
         $periodos=Periodo::pluck('nombre','id');
         $materias=Materia::pluck('nombre','id');
-        $usuarios=User::pluck('name','id');
+
+        $rol = Role::where('name', 'Docente Invitado')->first(); // aqui traigo el rol solo del Docente Invitado 
+        $usuarios=$rol->users->pluck('name','id'); // aqui traigo los usuarios que tiene ese rol
+        //$usuarios=User::pluck('name','id');
         return view('distributivo.crear',compact('periodos','materias','usuarios'));
     }
 
@@ -43,6 +46,6 @@ class DistributivoController extends Controller
         ]);
 
         Distributivo::create($request->all());
-        return redirect()->route('distributivo.create')->with('success','!Registro exitoso¡');
+        return redirect()->route('distributivo.create')->with('success','!Distributivo asignado con éxito¡');
     }
 }

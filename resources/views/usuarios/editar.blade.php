@@ -41,7 +41,7 @@
                                     </div>
                                     <div clas="col-xs-12 col-sm-12 col-md-12">
                                         <div class="form-group">
-                                            <label for="telefono">Teléfono: </label>
+                                            <label for="telefono">Celular: </label>
                                             {!! Form::text('telefono',null,array('class'=>'form-control')) !!}
                                             @error('telefono')
                                               <span style="color:red;">{{$message}}</span>  

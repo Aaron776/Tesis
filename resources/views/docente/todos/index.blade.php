@@ -9,7 +9,7 @@
       <div class="col-lg-12">
           <div class="card">
               <div class="card-body">
-                  <table class="table table-striped table-hover" id="docentes">
+                  <table class="table table-striped table-hover" id="docentesInvitados">
                     <thead>
                       <tr>
                         <th scope="col">Cédula</th>
@@ -19,20 +19,16 @@
                       </tr>
                     </thead>
                     <tbody>
-                        @foreach($docentes as $index)
-                        @foreach($index->getRoleNames() as $rolName)
-                          @if($rolName=='Docente Invitado')
+                        @foreach($docentesInvitados as $index)
                             <tr>
                               <th>{{$index->cedula}}</th>
                               <th>{{$index->name}}</th>
                               <th>{{$index->telefono}}</th>
                               <td>{{$index->email}}</td>
                               <td>
-                                <a href="{{route('distributivo.index',$index->id)}}" class="btn btn-primary">Ver Distributivos</a>
+                                <a href="{{route('distributivo.index',$index->id)}}" class="btn btn-info">Ver Distributivos</a>
                               </td>
-                            </tr>
-                            @endif
-                        @endforeach   
+                            </tr>  
                         @endforeach
                     </tbody>
                   </table> 
@@ -49,11 +45,11 @@
   <script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap5.min.js"></script>
   <script>
       $(document).ready(function(){
-          if ($.fn.DataTable.isDataTable('#docentes')) {
-            $('#docentes').DataTable().destroy();
+          if ($.fn.DataTable.isDataTable('#docentesInvitados')) {
+            $('#docentesInvitados').DataTable().destroy();
           }
 
-          $('#docentes').DataTable(
+          $('#docentesInvitados').DataTable(
               {
                   "lengthMenu":[[5,10,50,-1],[5,10,50,"Todos"]],
                   "language": {
