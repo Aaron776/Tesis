@@ -4,7 +4,7 @@
     </div>-->
     <x-jet-authentication-card >
         <x-slot name="logo">
-            <img src="vendor/adminlte/dist/img/logo.png">
+            <img src="https://unibe.edu.ec/wp-content/uploads/2022/08/logoo.png" width="400">
         </x-slot>
 
         <x-jet-validation-errors class="mb-4" />

@@ -14,7 +14,7 @@
 <body>
   <h1 style="text-align: center;">UNIVERSIDAD IBEROAMERICANA DEL ECUADOR</h1>
   <div>
-    <img style="margin-left: 450px;" src="https://univercimas.com/wp-content/uploads/2021/05/Logo-de-la-Universidad-Iberoamericana-del-Ecuador-UNIBE-300x300.png" width="150px">
+    <img style="margin-left: 400px;" src="https://unibe.edu.ec/wp-content/uploads/2022/08/logoo.png" width="250px">
   </div>
   
   <h2 style="text-align: center;">Reporte Mensual</h2>

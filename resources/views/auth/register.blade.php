@@ -1,7 +1,7 @@
 <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
-            <img src="https://univercimas.com/wp-content/uploads/2021/05/Logo-de-la-Universidad-Iberoamericana-del-Ecuador-UNIBE-300x300.png">
+            <img src="https://unibe.edu.ec/wp-content/uploads/2022/08/logoo.png"  width="400">
         </x-slot>
 
         <x-jet-validation-errors class="mb-4" />

@@ -23,5 +23,14 @@ class UserSeeder extends Seeder
             'password'=>bcrypt('12345678')
 
         ])->assignRole('Administrador');
+
+        User::create([
+            'cedula'=>'1976159683',
+            'name'=>'Carlos Patricio Rodriguez Alban',
+            'telefono'=>'0984577543',
+            'email'=>'carlos@yahoo.com',
+            'password'=>bcrypt('12345678')
+
+        ])->assignRole(['Administrador','Docente Invitado']);
     }
 }

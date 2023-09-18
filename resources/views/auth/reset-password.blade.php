@@ -1,7 +1,7 @@
 <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
-            <img src="https://virtual.unibe.edu.ec/pluginfile.php/1/theme_fordson/headerlogo/1665964423/logoU.png">
+            <img src="https://unibe.edu.ec/wp-content/uploads/2022/08/logoo.png"  width="400">
         </x-slot>
 
         <x-jet-validation-errors class="mb-4" />

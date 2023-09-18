@@ -40,9 +40,10 @@ class DistributivoController extends Controller
             'id_materia'=> 'required',
             'id_periodo'=> 'required',
             'tipo_clase' => 'required',
-            'dia'=>'required',
+            'dia'=>'required|string',
             'hora_inicio'=>'required',
             'hora_fin'=>'required',
+            'tipo_clase'=>'required',
         ]);
 
         Distributivo::create($request->all());

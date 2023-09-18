@@ -60,13 +60,16 @@
                             {!! Form::label(null, 'Hora de Fin Clase: ', null) !!}
                             {!! Form::time('hora_fin', null, ['class'=>'form-control']) !!}
                             @error('hora_fin')
-                                    <span style="color:red;">{{$message}}</span>  
+                                <span style="color:red;">{{$message}}</span>  
                             @enderror
                            </div>
                            
                            <div class="form-group">
                             {!! Form::label(null, 'Modalidad: ', null) !!}
                             {!! Form::text('tipo_clase', null, ['class'=>'form-control']) !!}
+                            @error('tipo_clase')
+                                <span style="color:red;">{{$message}}</span>  
+                            @enderror
                            </div>
 
                                 <div class="form-group">

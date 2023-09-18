@@ -1,7 +1,7 @@
 <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
-            <x-jet-authentication-card-logo />
+            <img src="https://unibe.edu.ec/wp-content/uploads/2022/08/logoo.png"  width="400">
         </x-slot>
 
         <div class="mb-4 text-sm text-gray-600">
@@ -20,7 +20,7 @@
 
             <div class="flex justify-end mt-4">
                 <x-jet-button class="ml-4">
-                    {{ __('Confirm') }}
+                    {{ __('Confirmar') }}
                 </x-jet-button>
             </div>
         </form>
